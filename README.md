@@ -1,6 +1,7 @@
-# leetcode_prac
-practice leetcode question
-
+# leetcode_prac:
+1. practice leetcode question
+2. reference from : https://cspiration.com/leetcodeClassification#10318
+ 
 # Template makefile:
 
 1. mod the name of main.cpp if you have to change the main name.
@@ -13,3 +14,4 @@ practice leetcode question
 # WorkList
 
 1. TwoSum(2020/04/01)
+2. Median of two sorted array.(2020/04/04)
