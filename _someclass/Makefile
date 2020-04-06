@@ -2,7 +2,7 @@
 
 SRCS = $(shell ls cpp/*.cpp)
 SRCS += main.cpp
-SRCS_H = $(shell ls hpp/*.h)
+SRCS_H = $(shell ls hpp/*.hpp)
 OBJS = $(SRCS:.cpp=.o)
 #APP : main() here
 APP = ./main.exe	
@@ -26,7 +26,7 @@ clean:
 
 format:
 	clang-format -assume-filename=.clang-format -i $(SRCS)
-	clang-format -assume-filename=.clang-format -i $(SRCS_H)
+	clang-format -assume-filename=.clang-format -i hpp/*.hpp
 
 run:
 	$(APP) 
