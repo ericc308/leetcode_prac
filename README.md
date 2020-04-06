@@ -12,6 +12,11 @@
 2. run __cmake .__
 
 # WorkList
+## Done
 
 1. TwoSum(2020/04/01)
-2. Median of two sorted array.(2020/04/04)
+
+## Unfinished("_" wiil be in front of the name of folder)
+
+* Median of two sorted array.
+* Longest sub two repeat string.
