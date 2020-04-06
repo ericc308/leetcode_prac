@@ -6,16 +6,15 @@
 #include <vector>
 using namespace std;
 
-class MedianHeapTree { // cannot be used now
+class MedianHeapTree
+{ // cannot be used now
 
   std::vector<int> data;
 
 public:
   MedianHeapTree() { data.push_back(0); }
   ~MedianHeapTree() {}
-  void add_data(std::vector<int> input_list) {
-    data.insert(data.end(), input_list.begin(), input_list.end());
-  }
+  void add_data(std::vector<int> input_list) { data.insert(data.end(), input_list.begin(), input_list.end()); }
   void sort_to_median_tree();
   int get_median();
   int get_val(int index);
@@ -34,12 +33,18 @@ public:
     for (int expnum = 1; index < data.size(); expnum++) {
       std::cout << "Level " << expnum << ": ";
       int beg = index;
-      for (int idata = beg; index < pow(2, expnum) && index < data.size();
-           idata++) {
+      for (int idata = beg; index < pow(2, expnum) && index < data.size(); idata++) {
         std::cout << data[idata] << " ";
         index++;
       }
       std::cout << std::endl;
     }
   }
+};
+
+class MergeSort
+{
+public:
+  void merge_sort(std::vector<int> &array, int ibeg, int iend);
+  void merge_sub(std::vector<int> &array, int ibeg, int imid, int iend);
 };

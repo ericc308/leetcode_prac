@@ -67,16 +67,14 @@ void MedianHeapTree::exchange_to_root(int index) {
   data[index] = val_root;
 }
 void MedianHeapTree::exchange_right_child(int index) {
-  std::cout << "Exchange value: " << data[index] << " and "
-            << data[index * 2 + 1] << std::endl;
+  std::cout << "Exchange value: " << data[index] << " and " << data[index * 2 + 1] << std::endl;
   int val_root = data[index];
   int val_exchange = data[index * 2 + 1];
   data[index] = val_exchange;
   data[index * 2 + 1] = val_root;
 }
 void MedianHeapTree::exchange_left_child(int index) {
-  std::cout << "Exchange value: " << data[index] << " and " << data[index * 2]
-            << std::endl;
+  std::cout << "Exchange value: " << data[index] << " and " << data[index * 2] << std::endl;
   int val_root = data[index];
   int val_exchange = data[index * 2];
   data[index] = val_exchange;
@@ -220,3 +218,38 @@ int MedianHeapTree::return_n_sqrt_of_2(int num) {
   return n;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void MergeSort::merge_sort(std::vector<int> &array, int ibeg, int iend) {
+
+  if (ibeg < iend) {
+    int imid = (ibeg + iend) / 2;
+    merge_sort(array, ibeg, imid);
+    merge_sort(array, imid + 1, iend);
+    merge_sub(array, ibeg, imid, iend);
+  }
+}
+void MergeSort::merge_sub(std::vector<int> &array, int ibeg, int imid, int iend) {
+  std::vector<int> left_sub;
+  left_sub.assign(array.begin() + ibeg, array.begin() + imid + 1);
+  std::vector<int> right_sub;
+  right_sub.assign(array.begin() + imid + 1, array.begin() + iend + 1);
+  for (int index_sorted = ibeg; index_sorted <= iend; index_sorted++) {
+    if (!left_sub.empty()) {
+      if (!right_sub.empty()) {
+        if (left_sub[0] < right_sub[0]) {
+          array[index_sorted] = left_sub[0];
+          left_sub.erase(left_sub.begin());
+        } else {
+          array[index_sorted] = right_sub[0];
+          right_sub.erase(right_sub.begin());
+        }
+      } else {
+        array[index_sorted] = left_sub[0];
+        left_sub.erase(left_sub.begin());
+      }
+    } else {
+      array[index_sorted] = right_sub[0];
+      right_sub.erase(right_sub.begin());
+    }
+  }
+}
