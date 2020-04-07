@@ -26,7 +26,7 @@ clean:
 
 format:
 	clang-format -assume-filename=.clang-format -i $(SRCS)
-	clang-format -assume-filename=.clang-format -i $(SRCS_H)
+	clang-format -assume-filename=.clang-format -i hpp/*hpp
 
 run:
 	$(APP) 
