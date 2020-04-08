@@ -48,12 +48,16 @@ int main() {
       std::cout << "\033[1;31mFAIL!!\033[0m : getNumber() is :" << res[idata] << ", it should be" << ansnum[idata] << " in " << str_combine << "\n";
     }
   }
+  ///////////////////////////////////////
+  std::cerr << "get_number_or_warning () Test : \n";
+  std::cerr << "Test 1: \n";
   int64_t res_2 = si.get_number_or_warning(str_combine);
   if (res_2 == 0) {
     std::cout << "\033[1;32mPASS!!\033[0m : get_number_or_warning() " << 0 << " in " << str_combine << "\n";
   } else {
     std::cout << "\033[1;31mFAIL!!\033[0m : get_number_or_warning() is :" << res_2 << ", it should be" << 0 << " in " << str_combine << "\n";
   }
+  std::cerr << "Test 2: \n";
   str_combine = "-456";
   int64_t res_3 = si.get_number_or_warning(str_combine);
   if (res_3 == -456) {
@@ -61,6 +65,7 @@ int main() {
   } else {
     std::cout << "\033[1;31mFAIL!!\033[0m : get_number_or_warning() is : " << res_3 << ", it should be" << -456 << " in " << str_combine << "\n";
   }
+  std::cerr << "Test 3: \n";
   str_combine = "  0456";
   int64_t res_4 = si.get_number_or_warning(str_combine);
   if (res_4 == 456) {
@@ -68,7 +73,7 @@ int main() {
   } else {
     std::cout << "\033[1;31mFAIL!!\033[0m : get_number_or_warning() is : " << res_4 << ", it should be" << 456 << " in " << str_combine << "\n";
   }
-
+  std::cerr << "Test 4: \n";
   str_combine = "-912834723322";
   int64_t res_5 = si.get_number_or_warning(str_combine);
   if (res_5 == INT32_MIN) {
@@ -84,4 +89,30 @@ int main() {
   } else {
     std::cout << "\033[1;31mFAIL!!\033[0m : get_number_or_warning() is : " << res_6 << ", it should be" << 12345678 << " in " << str_combine << "\n";
   }
+
+  str_combine = "00000000000";
+  int64_t res_7 = si.get_number_or_warning(str_combine);
+  if (res_7 == 0) {
+    std::cout << "\033[1;32mPASS!!\033[0m : get_number_or_warning() " << 0 << " in " << str_combine << "\n";
+  } else {
+    std::cout << "\033[1;31mFAIL!!\033[0m : get_number_or_warning() is : " << res_7 << ", it should be" << 0 << " in " << str_combine << "\n";
+  }
+
+    str_combine = "+-2";
+  int64_t res_8 = si.get_number_or_warning(str_combine);
+  if (res_8 == 0) {
+    std::cout << "\033[1;32mPASS!!\033[0m : get_number_or_warning() " << 0 << " in " << str_combine << "\n";
+  } else {
+    std::cout << "\033[1;31mFAIL!!\033[0m : get_number_or_warning() is : " << res_8 << ", it should be" << 0 << " in " << str_combine << "\n";
+  }
+
+  str_combine = "0012000";
+  int expect_ans = 12000;
+  int64_t res_9 = si.get_number_or_warning(str_combine);
+  if (res_9 == expect_ans) {
+    std::cout << "\033[1;32mPASS!!\033[0m : get_number_or_warning() " << expect_ans << " in " << str_combine << "\n";
+  } else {
+    std::cout << "\033[1;31mFAIL!!\033[0m : get_number_or_warning() is : " << res_9 << ", it should be" << expect_ans << " in " << str_combine << "\n";
+  }
+
 }

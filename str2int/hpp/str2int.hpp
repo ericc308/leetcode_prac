@@ -59,15 +59,33 @@ public:
         extension.push_back('0');
       }
       extension.insert(extension.end(), input.begin(), input.end());
-      std::cout << input << std::endl;
+      // std::cout << input << std::endl;
       re = extension.compare(max);
     } else if (length > 10) {
-      std::cout << input << std::endl;
+      // std::cout << input << std::endl;
       re = 1;
     } else {
-      std::cout << input << std::endl;
+      // std::cout << input << std::endl;
       re = input.compare(max);
     }
     return re;
   }
+
+  std::string remove_front_zero(std::string input) {
+    int length = input.size();
+    if (input.at(0) == '0') {
+      for (int inum = 0; inum < length; inum++) {
+        if (input.at(inum) == '0') {
+          input.assign(input.begin() + 1, input.end());
+          inum--;
+          length--;
+        } else {
+          // std::cout << inum << std::endl;
+          inum = length;
+        }
+      }
+    }
+    return input;
+  }
+  
 };

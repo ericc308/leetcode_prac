@@ -18,6 +18,13 @@
 1. TwoSum(2020/04/01)
 2. Median of two sorted array(2020/04/06)
 
+
+### Fail in some cases:
+
+1. str2int(2020/04/08):
+* case : "+0 123".
+* comment : too much weird cases, it does not meet the practical using.
+
 ### Unfinished("_" wiil be in front of the name of folder)
 
 * Longest sub two repeat string.

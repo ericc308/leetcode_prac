@@ -46,26 +46,28 @@ int Str2Int::get_number_or_warning(std::string input) {
   int count = 0;
   int length = input.size();
   int isnegative = -1;
-  int isnegative_again = 0;
+  int issign_repeated = 0;
+  int isnegative_appeared = 0;
+  int ispostive_appeared = 0;
+  int first_0 = 0;
   std::string sub_string;
+  std::vector<char> sign;
   for (int ichar = 0; ichar < length; ichar++) {
-    while (input.at(ichar) == '0' && input.at(0) == '0') {
-      ichar++;
-    }
+    // while ((input.at(ichar) == '0' && input.at(0) == '0')) { // when meet 0 first
+    //   ichar++;
+    // }
     char cur_char = input.at(ichar);
     if (isNumber(cur_char) > 0) {
       sub_string.push_back(cur_char);
     } else {
       if (isMinus(cur_char) > 0) {
-        if (isnegative_again > 0) {
-          ichar = length;
-        } else {
-          isnegative = 1;
-          isnegative_again = 1;
-        }
+        sign.push_back('-');
       } else {
-        if (cur_char == ' ' || cur_char == '+' || cur_char=='0') {
-          // bypass since blank
+        if (cur_char == ' ' || cur_char == '+') { // when ' ' , '+' and '0' appear at first.
+          if (cur_char == '+') {
+            sign.push_back('+');
+          }
+          // bypass since blank.
         } else {
           // first word is non number, break the loop.
           ichar = length;
@@ -73,8 +75,27 @@ int Str2Int::get_number_or_warning(std::string input) {
       }
     }
   }
-  std::cout << " sub string: '" << sub_string <<"'"<< std::endl;
-  if (sub_string.size() > 0) {
+
+  int length_of_sub = sub_string.size();
+  // std::cout << "sub string :" << sub_string << std::endl;
+  if (length_of_sub > 0) {
+    // remove 0s at front of number
+    sub_string = remove_front_zero(sub_string);
+  }
+  // std::cout << "sub string :" << sub_string << std::endl;
+  if (sign.size() > 1) {
+    sub_string = "";
+    length_of_sub = 0;
+  } else {
+    if (sign.size() != 0) {
+      if (sign.at(0) == '-') {
+        isnegative = 1;
+      }
+    }
+  }
+
+  if (length_of_sub > 0) {
+    // check if overflow?
     if (islargermax(sub_string) >= 0) {
       if (isnegative > 0) {
         result = INT32_MIN;
