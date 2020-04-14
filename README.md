@@ -12,13 +12,14 @@
 2. run __cmake .__
 
 # WorksList:
-Total : 6.
+Total : 7.
 
 ### Done:
 
 #### 1. TwoSum(2020/04/01)
 #### 4. Median of two sorted array(2020/04/06)
 #### 6. ZigZag Conversion(2020/04/13)
+#### 7. Reverse integer(2020/04/14)
 
 ### Fail in some cases:
 
