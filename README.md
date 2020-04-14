@@ -20,6 +20,7 @@ Total : 7.
 #### 4. Median of two sorted array(2020/04/06)
 #### 6. ZigZag Conversion(2020/04/13)
 #### 7. Reverse integer(2020/04/14)
+#### 9. Palindromic integer(2020/04/14)
 
 ### Fail in some cases:
 
