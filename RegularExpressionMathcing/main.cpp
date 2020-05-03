@@ -6,14 +6,10 @@ int main() {
   RegularMathcing RM;
 
   std::cout << "\033[1;33;42mRegular Experession Mathcing\033[0m :\n";
-  std::string test = "abc";
+
   auto start = std::chrono::steady_clock::now();
-  std::vector<std::string> result = RM.get_sub_pattern(test);
 
   auto end = std::chrono::steady_clock::now();
-  for (int ist = 0; ist < result.size(); ist++) {
-    std::cout << result[ist] << std::endl;
-  }
 
   std::cout << "time elapsed : "
             << std::chrono::duration_cast<std::chrono::microseconds>(end -
@@ -26,6 +22,32 @@ int main() {
                    .count()
             << " ms" << std::endl;
 
-  std::string test2 = "abcd";
-  std::cout << "Ans:" << RM.isSubstringEqual(test, test2, 0, 4) << std::endl;
+  std::string compare = "c*a*b";
+  std::string Reference = "aab";
+  std::cout << "The ans of [" << Reference << "] and [" << compare
+            << "]= " << RM.isMatch(Reference, compare) << std::endl;
+  compare = "mis*is*ip*.";
+  Reference = "mississippi";
+  std::cout << "The ans of [" << Reference << "] and [" << compare
+            << "]= " << RM.isMatch(Reference, compare) << std::endl;
+  compare = "a";
+  Reference = "aa";
+  std::cout << "The ans of [" << Reference << "] and [" << compare
+            << "]= " << RM.isMatch(Reference, compare) << std::endl;
+  compare = "ab*";
+  Reference = "a";
+  std::cout << "The ans of [" << Reference << "] and [" << compare
+            << "]= " << RM.isMatch(Reference, compare) << std::endl;
+
+  compare = "ab*a";
+  Reference = "a";
+  std::cout << "The ans of [" << Reference << "] and [" << compare
+            << "]= " << RM.isMatch(Reference, compare) << std::endl;
+
+  compare = "a*a";
+  Reference = "aaa";
+  std::cout << "The ans of [" << Reference << "] and [" << compare
+            << "]= " << RM.isMatch(Reference, compare) << std::endl;
+            
+  return 0;
 }

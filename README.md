@@ -37,6 +37,8 @@ Total : 7.
 
 3. Longest sub two repeat string.
 10. Regular Expression Matching
+    * fail in case :
+    input = "aaa", compare_pattern "a*a".
 
 ### Some useful class created by ycj
 * someclass

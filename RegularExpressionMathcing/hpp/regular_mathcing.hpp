@@ -10,4 +10,6 @@ public:
   std::vector<std::string> get_sub_pattern(std::string input);
   int isSubstringEqual(std::string &input, std::string substr, int ibeg,
                        int num);
+  int RepeatSubstringEqualStarTimes(std::string &input, std::string substr,
+                                    int ibeg);
 };
