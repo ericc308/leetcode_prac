@@ -17,6 +17,7 @@ Total : 7.
 ### Done:
 
 #### 1. TwoSum(2020/04/01)
+#### 2. AddTwoSum(2020/06/03)
 #### 4. Median of two sorted array(2020/04/06)
 #### 6. ZigZag Conversion(2020/04/13)
 #### 7. Reverse integer(2020/04/14)
