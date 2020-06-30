@@ -12,7 +12,9 @@
 2. run __cmake .__
 
 # WorksList:
-Total : 7.
+Finshed : 8.
+Failed : 2.
+Unfinished : 2
 
 ### Done:
 
@@ -23,6 +25,7 @@ Total : 7.
 #### 7. Reverse integer(2020/04/14)
 #### 9. Palindromic integer(2020/04/14)
 #### 11. Container with max water(2020/04/17) 
+#### 12. Integer to Roman(2020/06/30) 
 
 ### Fail in some cases:
 
@@ -30,15 +33,16 @@ Total : 7.
 * case : "+0 123".
 * comment : too much weird cases, it does not meet the practical using.
 
-#### 3. Longest Palindromic substring(2020/04/09):
+#### 5. Longest Palindromic substring(2020/04/09):
 * case :"iopsajhffgvrnyitusobwcxgwlwniqchfnssqttdrnqqcsrigjsxkzcmuoiyxzerakhmexuyeuhjfobrmkoqdljrlojjjysfdslyvckxhuleagmxnzvikfitmkfhevfesnwltekstsueefbrddxrmxokpaxsenwlgytdaexgfwtneurhxvjvpsliepgvspdchmhggybwupiqaqlhjjrildjuewkdxbcpsbjtsevkppvgilrlspejqvzpfeorjmrbdppovvpzxcytscycgwsbnmspihzldjdgilnrlmhaswqaqbecmaocesnpqaotamwofyyfsbmxidowusogmylhlhxftnrmhtnnljjhhcfvywsqimqxqobfsageysonuoagmmviozeouutsiecitrmkypwknorjjiaasxfhsftypspwhvqovmwkjuehujofiabznpipidhfxpoustquzyfurkcgmioxacleqdxgrxbldcuxzgbcazgfismcgmgtjuwchymkzoiqhzaqrtiykdkydgvuaqkllbsactntexcybbjaxlfhyvbxieelstduqzfkoceqzgncvexklahxjnvtyqcjtbfanzgpdmucjlqpiolklmjxnscjcyiybdkgitxnuvtmoypcdldrvalxcxalpwumfx"
 * comment : may need to improve algorithm in order to speed up the program.
 
 ### Unfinished("_" wiil be in front of the name of folder)
 
-3. Longest sub two repeat string.
-10. Regular Expression Matching
-    * fail in case :
+#### 3. Longest sub two repeat string.
+
+#### 10. Regular Expression Matching
+* fail in case :
     input = "aaa", compare_pattern "a*a".
 
 ### Some useful class created by ycj
