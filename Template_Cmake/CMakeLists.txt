@@ -1,3 +1,10 @@
 cmake_minimum_required(VERSION 2.6)
 project(main)
-add_executable(main main.cpp ./cpp/two_sum.cpp)
+SET(GCC_COVERAGE_COMPILE_FLAGS "-Wall")
+SET(SRCS ./cpp/two_sum.cpp main.cpp)
+
+include_directories(SRCS PUBLIC ./hpp)
+
+ADD_EXECUTABLE (main ${SRCS})
+
+target_compile_options (main PRIVATE -std=c++17)
