@@ -12,7 +12,7 @@
 2. run __cmake .__
 
 # WorksList:
-Finshed : 8.
+Finshed : 9.
 Failed : 2.
 Unfinished : 2
 
@@ -26,6 +26,7 @@ Unfinished : 2
 #### 9. Palindromic integer(2020/04/14)
 #### 11. Container with max water(2020/04/17) 
 #### 12. Integer to Roman(2020/06/30) 
+#### 13. Roman to Integer(2020/06/30) 
 
 ### Fail in some cases:
 
