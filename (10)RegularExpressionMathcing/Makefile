@@ -25,8 +25,8 @@ clean:
 	rm -rf $(OBJS) $(APP)  *.o
 
 format:
-	clang-format -assume-filename=.clang-format -i $(SRCS)
-	clang-format -assume-filename=.clang-format -i ./hpp/*.hpp
+	clang-format -style=llvm -i $(SRCS)
+	clang-format -style=llvm -i ./hpp/*.hpp
 
 run:
 	$(APP) 

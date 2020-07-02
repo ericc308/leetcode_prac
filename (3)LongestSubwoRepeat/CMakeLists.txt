@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 project(main)
 SET(GCC_COVERAGE_COMPILE_FLAGS "-Wall")
-SET(SRCS ./cpp/two_sum.cpp main.cpp)
+SET(SRCS ./cpp/find_sub.cpp main.cpp)
 
 include_directories(SRCS PUBLIC ./hpp)
 
