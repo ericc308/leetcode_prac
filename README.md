@@ -20,7 +20,7 @@ Unfinished : 2
 
 #### 1. TwoSum(2020/04/01)
 #### 2. AddTwoSum(2020/06/03)
-#### 3. [Longest sub w/o repeat string](./(3)LongestSubwoRepeat/README.md)(2020/07/02)
+#### 3. [Longest sub w/o repeat string](./_3_LongestSubwoRepeat/README.md)(2020/07/02)
 #### 4. Median of two sorted array(2020/04/06)
 #### 6. ZigZag Conversion(2020/04/13)
 #### 7. Reverse integer(2020/04/14)
