@@ -1,5 +1,12 @@
 #include "server.hpp"
-
+/*
+1. socket
+2. bind
+3. listen
+4. accept
+5. rece/send
+6. close
+*/
 FakeServer::FakeServer(std::string ip_addr, int ip_port) {
   _IP_adr = ip_addr;
   _IP_port = ip_port;
@@ -15,7 +22,7 @@ int FakeServer::socket_init() {
   //socket info
   int addr_len = sizeof(client_Info);
   memset(&sever_info, 0, sizeof(sever_info));
-  sever_info.sin_family = AF_INET;
+  sever_info.sin_family = AF_INET;      // ivp4
   sever_info.sin_addr.s_addr = inet_addr(_IP_adr.c_str());
   sever_info.sin_port = htons(_IP_port);
 

@@ -1,6 +1,5 @@
 #include "server.hpp"
 
-
 int main(){
   std::cout<<" Socket example :\n";
 
