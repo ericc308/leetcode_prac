@@ -16,6 +16,13 @@
 #define SD_SEND SHUT_WR
 #endif
 
+/*
+1. socket
+2. connect
+3. rece/send
+4. close
+*/
+
 int sockInit(void) {
 #ifdef _WIN32
   WSADATA wsa_data;
@@ -56,8 +63,6 @@ int main(){
   struct sockaddr_in info;
   memset(&info, 0, sizeof(info));
   info.sin_family = PF_INET;
-
-  // localhost test
   info.sin_addr.s_addr = inet_addr(ip_addr.c_str());
   info.sin_port = htons(ip_port);
 
